@@ -36,6 +36,9 @@ body * {
 ------------------------------*/
 header {
     padding: 10px 20px;
+    -webkit-background: url(../IMG/background.jpg) fixed center no-repeat;
+    -moz-background: url(../IMG/background.jpg) fixed center no-repeat;
+    -o-background: url(../IMG/background.jpg) fixed center no-repeat;
     background: url(../IMG/background.jpg) fixed center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
