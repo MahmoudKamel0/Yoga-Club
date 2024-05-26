@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@100;200;300;400;500&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',"Tajawal", sans-serif;
+    list-style: none;
+    text-decoration: none !important;
+}
+:root {
+    font-size: 10px;
+    --transition: 0.5s;
+
+    --nav-links: #fff;
+    --white:     #fff;
+}
+body * {
+    font-size: 1.6rem;
+}
+
+/* Global Classes */
+.title {
+    font-family: 'Croissant One', cursive;
+    font-size: 3rem;
+    color: #8f80b9;
+    text-align: center;
+}
+.title-paragraph {
+    font-size: 1.9rem;
+    font-weight: 500;
+    text-align: center; 
+}
+
+/*-- Start Header Section 
+------------------------------*/
+header {
+    padding: 10px 20px;
+    background: url(../IMG/background.jpg) fixed center no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+}
+
+    /* Navigation */
+    .navigation menu li a {
+        margin: 0px 20px;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: white;
+        position: relative;
+    }
+
+    .navigation menu li a::before {
+        content: "";
+        position: absolute;
+        font-weight: bold;
+        height: 3px;
+        left: 50%;
+        bottom: -10px;
+        width: 0;
+        background-color: #0ef;
+        border-radius: 20px;
+        transition: all var(--transition) ease-out;
+    }
+
+    .navigation menu li a:hover::before {
+        left: 0;
+        width: 100%;
+    }
+
+    .navigation .btn-menu {
+        height: 30px;
+        width: 30px;
+        border: none;
+        outline: none;
+        background: none;
+    }
+    
+    .navigation .btn-menu div {
+        height: 3px;
+        width: 100%;
+        border-radius: 20px;
+        background: var(--white);
+        transition: var(--transition);
+        position: absolute;
+    }
+    
+    .navigation .btn-menu :is(div:first-child, div:last-child) {
+        width: 50%;
+    }
+
+    .navigation .btn-menu div:first-child {
+        top: 0;
+        right: 0;
+    }
+
+    .navigation .btn-menu div:nth-child(2) {
+        transform: translateY(-50%);
+    }
+
+    .navigation .btn-menu div:last-child {
+        bottom: 0;
+    }
+
+    /* Show Menu js Responsive  */
+    .navigation .show-menu {
+        width: 100%;
+        padding: 20px 0px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        background: hsla(256, 29%, 61%, 0.856);
+        position: absolute;
+        top: 100px;
+    }
+
+    .navigation .show-menu li {
+        margin: 15px 0px;
+    }
+
+
+
+    /* Content */
+    .content {
+        min-height: 82.8vh;
+    }
+
+    .content :is(h1,p) {
+        color: var(--white);
+    }
+
+    .content h1 {
+        font-size: clamp(2rem, 9.5vw, 5rem);  
+        font-weight: 700;  
+    }
+
+    .content p {
+        font-size: clamp(1rem, 9.5vw, 1.9rem);  
+        color: var(--white);
+        letter-spacing: 0.8px; 
+    }
+
+    .content .btn-join-us{
+        margin-top: 30px;
+        padding: 15px 50px;
+        color: var(--white);
+        background: linear-gradient(to right, #8f80b9,#443a80);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transition: var(--transition);
+    }
+
+    .content .btn-join-us:hover {
+        letter-spacing: 1px;
+    }
+
+
+
+/*-- Start Services Section 
+------------------------------*/
+#services{
+    margin: 120px 0px;
+    padding: 0px 10px;
+}
+
+    /* Card Services */
+    .cards {
+        margin-top: 40px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .cards .container-card svg {
+        width: 150px;
+    }
+
+    .cards .container-card h3 {
+        font-size: 1.9rem;
+        font-weight: 600;
+        color: #443a80;
+    }
+
+
+
+/*-- Start About Section 
+------------------------------*/
+#about :is(.txt, .img) {
+    min-height: 512px;
+}
+
+
+    /* Text */
+    .txt {
+        padding-left: 40px;
+        background: linear-gradient(to right,#eee,#fff 60%);    
+    }
+
+    .txt h3 {
+        font-size: 4rem;
+        color: #443a80;
+    }
+
+    .txt ul {
+        margin: 20px 0px;
+    }
+
+    .txt ul li::before {
+        content: "\f0e7";
+        font-family: FontAwesome;
+        color: #8f80b9;
+        margin-right: 10px;
+    }
+
+    .img {
+        background: url(../IMG/bg-about.jpg) center/cover;
+    }
+
+    /* About Mobile Responsive */
+    @media (max-width: 768px) {
+        .txt {
+            padding-left: 40px;
+            background: linear-gradient(rgba(0, 0, 0, 0.479) 100%, #000), url(../IMG/bg-about.jpg) center/cover;
+        }
+
+        .txt * {
+            color: var(--white) !important;
+        }
+
+        .img {
+            display: none;
+        }
+    }
+
+
+
+/*-- Start Classes Section 
+------------------------------*/
+#classes {
+    min-height: 460px;
+    margin: 60px 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    /* Classes */
+    #classes .class {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .class img {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .class a {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #8f80b9 !important;
+        letter-spacing: 0.5px;
+    }
+
+    .class p {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+    
+
+
+/*-- Start About Section 
+------------------------------*/
+footer {
+    background-color: #303238;
+    padding: 70px 30px;
+}
+footer * {
+    color: var(--white);
+}
+
+
+    footer .item h4 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #8f80b9;
+    }
+
+    footer .item ul {
+        margin-top: 10px;
+        padding: 0; /* because bootstrap*/
+    }
+
+    footer .item ul li {
+        margin-bottom: 3px;
+    }
+
+    footer .item .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        margin: 10px 10px 10px 0px;
+        text-align: center;
+        color: #eee;
+        line-height: 42px;
+        border-radius: 60px;
+        background: linear-gradient(to right,#9e62b1,#a83bc8bb 90%);
+        transition: var(--transition);
+    }
+
+    footer .item .social-links a:hover {
+        transform: scale(1.1);
+    }
+
+    .copyright{
+        margin: 80px auto -50px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .copyright p{
+        color: #eee;
+        font-size: 12px;
+    }
+    
+    span{
+        color: rgb(255,255,255,0.2);
+    }
